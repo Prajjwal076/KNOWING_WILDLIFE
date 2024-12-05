@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowing Wildlife</title>
+  <link rel="stylesheet" href="biodiversity.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Knowing Wildlife</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Image Slider Section -->
+  <section class="slider">
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <div class="slides">
+      <div class="slide" style="background-image: url('photo/eyes_of_tiger.jpg');">
+        <div class="text-overlay">Explore the Beauty of Wildlife</div>
+      </div>
+      <div class="slide" style="background-image: url('photo/frog.jpg');">
+        <div class="text-overlay">Discover Wild Habitats</div>
+      </div>
+      <div class="slide" style="background-image: url('photo/blackbuck.jpg');">
+        <div class="text-overlay">Protect Endangered Species</div>
+      </div>
+      <div class="slide" style="background-image: url('photo/prision_monkey.jpg');">
+        <div class="text-overlay">Understand Animal Behavior</div>
+      </div>
+    </div>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </section>
+  
+  <section class="quick-facts">
+    <h2>Quick Wildlife Facts</h2>
+    <div class="fact-container">
+      <div class="fact">
+        <i class="fas fa-paw"></i>
+        <p>There are over 8.7 million species on Earth</p>
+      </div>
+      <div class="fact">
+        <i class="fas fa-tree"></i>
+        <p>Forests cover 31% of the world's land surface</p>
+      </div>
+      <div class="fact">
+        <i class="fas fa-fish"></i>
+        <p>Oceans host 80% of the planet's biodiversity</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flora-fauna-buttons">
+    <div class="button-container">
+      <a href="flora/flora.html" class="large-button" style="background-image: url('photo/chameleon.jpg');">
+        Flora
+      </a>
+      <a href="fauna/fauna.html" class="large-button" style="background-image: url('photo/humpback_whale.jpg');">
+        Fauna
+      </a>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-container" style="background-image: url('photo/zebre.jpg');">
+      <h2>Understanding Wildlife</h2>
+      <p>
+        Wildlife plays a crucial role in maintaining the ecological balance of our planet. From the smallest insect to the largest mammal, every creature contributes to the biodiversity that sustains life on Earth. Protecting both flora and fauna is essential for the future of our natural world.
+      </p>
+      <a href="#learn-more" class="learn-more-btn">Learn More</a>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Sign up for our newsletter to receive the latest wildlife news and conservation efforts.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Knowing Wildlife is dedicated to educating people about the importance of biodiversity and conservation.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Knowing Wildlife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="biodiversity.js"></script>
+</body>
+</html>

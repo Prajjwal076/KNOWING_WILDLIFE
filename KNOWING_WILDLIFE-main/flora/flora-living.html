@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Flora - Knowing Wildlife</title>
+  <link rel="stylesheet" href="../biodiversity.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Knowing Wildlife</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <main class="flora-living-page">
+    <h1>Living Flora</h1>
+    <div class="species-grid">
+      <div class="species-card">
+        <img src="../photo/sequoia_image.jpg" alt="Sequoia">
+        <h2>Sequoia</h2>
+        <p>Giant trees native to California's Sierra Nevada mountains.</p>
+        <button class="info-btn" onclick="showModal('sequoia')">More Info</button>
+      </div>
+      <div class="species-card">
+        <img src="../photo/orchid.jpeg" alt="Orchid">
+        <h2>Orchid</h2>
+        <p>Diverse family of flowering plants with colorful and fragrant blooms.</p>
+        <button class="info-btn" onclick="showModal('orchid')">More Info</button>
+      </div>
+      <div class="species-card">
+        <img src="../photo/bamboo.jpeg" alt="Bamboo">
+        <h2>Bamboo</h2>
+        <p>Fast-growing grass with various uses in construction and cuisine.</p>
+        <button class="info-btn" onclick="showModal('bamboo')">More Info</button>
+      </div>
+      <!-- Add more species cards -->
+    </div>
+  </main>
+
+  <!-- Modal for detailed information -->
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="">
+      <p id="modalDescription"></p>
+      <h3>Natural Habitat</h3>
+      <p id="modalHabitat"></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Knowing Wildlife is dedicated to educating people about the importance of biodiversity and conservation.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Knowing Wildlife. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../biodiversity.js"></script>
+  <script>
+    const speciesInfo = {
+      sequoia: {
+        title: "Sequoia",
+        image: "../photo/sequoia_image.jpg",
+        description: "Sequoias are among the largest and oldest trees on Earth. They can grow to heights of over 300 feet and live for thousands of years.",
+        habitat: "Sequoias are native to the western slopes of the Sierra Nevada mountains in California, USA. They thrive in mild, wet climates with abundant fog."
+      },
+      orchid: {
+        title: "Orchid",
+        image: "../photo/orchid.jpeg",
+        description: "Orchids are a diverse family of flowering plants, known for their complex flowers and often vibrant colors. There are over 28,000 currently accepted species.",
+        habitat: "Orchids can be found in various habitats worldwide, from tropical rainforests to tundra, and even in semi-desert regions."
+      },
+      bamboo: {
+        title: "Bamboo",
+        image: "../photo/bamboo.jpeg",
+        description: "Bamboo is a fast-growing grass that plays a crucial role in many ecosystems and human cultures. Some species can grow up to 35 inches per day.",
+        habitat: "Bamboo species are found in diverse climates, from cold mountains to tropical regions. They are particularly abundant in East and Southeast Asia."
+      }
+    };
+
+    function showModal(species) {
+      const modal = document.getElementById("infoModal");
+      const info = speciesInfo[species];
+      
+      document.getElementById("modalTitle").textContent = info.title;
+      document.getElementById("modalImage").src = info.image;
+      document.getElementById("modalDescription").textContent = info.description;
+      document.getElementById("modalHabitat").textContent = info.habitat;
+      
+      modal.style.display = "block";
+    }
+
+    document.querySelector(".close").onclick = function() {
+      document.getElementById("infoModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("infoModal")) {
+        document.getElementById("infoModal").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

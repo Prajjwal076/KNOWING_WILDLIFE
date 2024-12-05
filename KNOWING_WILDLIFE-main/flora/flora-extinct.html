@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Flora - Knowing Wildlife</title>
+  <link rel="stylesheet" href="../biodiversity.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Knowing Wildlife</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <main class="flora-living-page">
+    <h1>Living Flora</h1>
+    <div class="species-grid">
+      <div class="species-card">
+        <img src="../photo/cooksonia_image.jpeg" alt="cooksonia">
+        <h2>Cooksonia</h2>
+        <p>Cooksonia is an extinct group of primitive land plants, treated as a genus, although probably not monophyletic.</p>
+        <button class="info-btn" onclick="showModal('Cooksonia')">More Info</button>
+      </div>
+      <div class="species-card">
+        <img src="../photo/Sigillaria_image.jpeg" alt="Sigillaria">
+        <h2>Sigillaria</h2>
+        <p>Sigillaria is a genus of extinct, spore-bearing, arborescent lycophyte, known from the Carboniferous and Permian periods. </p>
+        <button class="info-btn" onclick="showModal('Sigillaria')">More Info</button>
+      </div>
+      <div class="species-card">
+        <img src="../photo/Calamities_image.jpeg" alt="Calamities">
+        <h2>Calamities</h2>
+        <p>Calamites is a genus of extinct arborescent (tree-like) horsetails to which the modern horsetails (genus Equisetum) are closely related.</p>
+        <button class="info-btn" onclick="showModal('Calamites')">More Info</button>
+      </div>
+      <!-- Add more species cards  -->
+    </div>
+  </main>
+
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="">
+      <p id="modalDescription"></p>
+      <h3>Natural Habitat</h3>
+      <p id="modalHabitat"></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Knowing Wildlife is dedicated to educating people about the importance of biodiversity and conservation.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Knowing Wildlife. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../biodiversity.js"></script>
+  <script>
+    const speciesInfo = {
+      Cooksonia: {
+        title: "Cooksonia",
+        image: "../photo/cooksonia_image.jpeg",
+        description:"It is famous as the first land plant that had true veins(conductive tissue) to transport water and sugars around the plant. Cooksonia was tiny - only a few millimeteres high, like all land plants that lived at the time. ",
+        habitat: "Cooksonia is genus of early true vascular plants that were leafless and rootless plants, with spore-bearing upright forked stems."
+      },
+      Sigillaria: {
+        title: "Sigillaria",
+        image: "../photo/Sigillaria_image.jpeg",
+        description: "Sigillaria was a tree-like plant reaching a height up to 30 m (98 ft),[1] and lycopsids were capable to reach a height of up to 50 m (160 ft).[4] These lycopsids had a tall, single or occasionally forked trunk[2] that lacked wood. ",
+        habitat: "Sigillaria, genus of fossil club moss allied to Lepidodendron, abundant in the Carboniferous period."
+      },
+      Calamities: {
+        title: "Calamities",
+        image: "../photo/Calamities_image",
+        description: "Calamites is a genus of extinct arborescent (tree-like) horsetails to which the modern horsetails (genus Equisetum) are closely related.",
+        habitat: "The name Catamites was first proposed by Suckow (1784) and later in 1828, Brongniart established its relationship with Equisetum."
+      }
+    };
+
+    function showModal(species) {
+      const modal = document.getElementById("infoModal");
+      const info = speciesInfo[species];
+      
+      document.getElementById("modalTitle").textContent = info.title;
+      document.getElementById("modalImage").src = info.image;
+      document.getElementById("modalDescription").textContent = info.description;
+      document.getElementById("modalHabitat").textContent = info.habitat;
+      
+      modal.style.display = "block";
+    }
+
+    document.querySelector(".close").onclick = function() {
+      document.getElementById("infoModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("infoModal")) {
+        document.getElementById("infoModal").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

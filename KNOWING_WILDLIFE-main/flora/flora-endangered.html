@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>endangered Flora - Knowing Wildlife</title>
+  <link rel="stylesheet" href="../biodiversity.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Knowing Wildlife</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <main class="flora-endangered-page">
+    <h1>Endangered Flora</h1>
+    <div class="species-grid">
+      <div class="species-card">
+        <img src="../photo/himalayanYew_image_2.jpeg" alt="Himalayan Yew">
+        <h2>Himalayan Yew</h2>
+        <p>The Himalayan yew, is a species of yew, native to the Himalaya and parts of south-east Asia.</p>
+        <button class="info-btn" onclick="showModal('HimalayanYew')">More Info</button>
+      </div>
+      <div class="species-card">
+        <img src="../photo/nilgiri_image.jpeg" alt="Nilgiri Sandalwood">
+        <h2>Nilgiri Sandalwood</h2>
+        <p>Nilgiris Biosphere Reserve is India's first and foremost biosphere reserves with a heritage, rich in flora and fauna.</p>
+        <button class="info-btn" onclick="showModal('NilgiriSandalwood')">More Info</button>
+      </div>
+      <div class="species-card">
+        <img src="../photo/pitcher_plant_image.jpeg" alt="Pitcher Plant">
+        <h2>Pitcher Plant</h2>
+        <p>Pitcher plants are carnivorous plants with modified leaves that trap and digest insects.</p>
+        <button class="info-btn" onclick="showModal('PitcherPlant')">More Info</button>
+      </div>
+      <!-- Add more species cards  -->
+    </div>
+  </main>
+
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" src="" alt="">
+      <p id="modalDescription"></p>
+      <h3>Natural Habitat</h3>
+      <p id="modalHabitat"></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Knowing Wildlife is dedicated to educating people about the importance of biodiversity and conservation.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Knowing Wildlife. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../biodiversity.js"></script>
+  <script>
+    const speciesInfo = {
+      HimalayanYew: {
+        title: "Himalayan Yew",
+        image: "../photo/himalayan_yew_image_2.jpeg",
+        description: "Taxus wallichiana (Himalayan yew), is a species of #yew, native to the Himalaya and parts of Southeast Asia. You can find this evergreen species growing between 900 m – 3700 m above sea level. The species has a variety of uses in traditional medicine including extraction of taxol from the plant’s shoots, which is said to have anti-cancer properties.",
+        habitat: "Himalayan temperate forests are ecologically significant ecosystems that provide habitat for a wide range of species, including the threatened Himalayan yew."
+      },
+      NilgiriSandalwood: {
+        title: "Nilgiri Sandalwood",
+        image: "../photo/nilgiri-image.jpeg",
+        description: "The woods are heavy, yellow, and fine-grained, and, unlike many other aromatic woods, they retain their fragrance for decades.",
+        habitat: "The Nilgiris Biosphere Reserve (NBR) is located in the southern part of the Western Ghats – Sri Lanka biodiversity hotspot and connects the Western Ghats to the Eastern Ghats."
+      },
+      PitcherPlant: {
+        title: "Pitcher Plant",
+        image: "photo/pitcher_plant_image.jpeg",
+        description: "Pitcher plants are several different carnivorous plants that have modified leaves known as pitfall traps—a prey-trapping mechanism featuring a deep cavity filled with digestive liquid. ",
+        habitat: "Pitcher plants are found in a wide range of habitats with poor soil conditions, from pine barrens to sandy coastal swamps, and rely on carnivory to obtain nutrients such as nitrogen and phosphorus."
+      }
+    };
+
+    function showModal(species) {
+      const modal = document.getElementById("infoModal");
+      const info = speciesInfo[species];
+      
+      document.getElementById("modalTitle").textContent = info.title;
+      document.getElementById("modalImage").src = info.image;
+      document.getElementById("modalDescription").textContent = info.description;
+      document.getElementById("modalHabitat").textContent = info.habitat;
+      
+      modal.style.display = "block";
+    }
+
+    document.querySelector(".close").onclick = function() {
+      document.getElementById("infoModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("infoModal")) {
+        document.getElementById("infoModal").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
